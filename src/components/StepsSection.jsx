@@ -1,6 +1,6 @@
 export default function StepSection() {
   return (
-    <div className="pt-6 pb-10 px-8 bg-blue-100">
+    <div className="pt-12 pb-14 px-8 bg-blue-100">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

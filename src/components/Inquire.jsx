@@ -50,7 +50,7 @@ export default function Inquire() {
               </div>
 
               {/* Title */}
-              <p className="text-xl text-gray-900 ml-20 pt-4 p-semibold">
+              <p className="text-xl text-gray-900 ml-16 pt-4 goat">
                 {card.title}
               </p>
 

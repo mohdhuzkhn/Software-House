@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WorkFlow = () => {
+const Services = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const WorkFlow = () => {
   )
 }
 
-export default WorkFlow
+export default Services

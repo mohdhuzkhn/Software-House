@@ -59,6 +59,7 @@ const Hero = () => {
     >
       {/* heroWeb background image with bounce */}
       <motion.img
+        loading="lazy"
         src={heroWeb}
         alt="Hero Web"
         className="absolute left-80 -top-8 w-[500px] h-auto z-0"
