@@ -54,7 +54,6 @@ const Hero = () => {
 
   return (
     <div
-      id="#"
       className="relative bg-white flex items-center justify-between gap-10 py-10 pl-12 pr-4 overflow-hidden"
     >
       {/* heroWeb background image with bounce */}

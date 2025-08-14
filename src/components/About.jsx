@@ -4,7 +4,9 @@ import design from "../assets/design7.jpg";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-blue-950 to-black text-white flex items-center justify-between gap-8 px-12 py-10">
+    <div
+    className="min-h-screen bg-gradient-to-b from-black via-blue-950 to-black text-white flex items-center justify-between gap-8 px-12 py-10"
+    >
       {/* Left Content */}
       <div className="flex flex-col gap-6 w-1/2">
         <p className="bg-gradient-to-r from-blue-500 to-blue-300 text-black px-5 py-1 rounded-full text-sm tracking-wide shadow-md p-semibold w-fit">
