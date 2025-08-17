@@ -1,6 +1,14 @@
 import React, { useState } from "react";
-import { FaUser, FaEnvelope, FaPhone, FaClipboardList, FaRegCommentDots } from "react-icons/fa";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhone,
+  FaClipboardList,
+  FaRegCommentDots,
+} from "react-icons/fa";
 import design from "../assets/design6.jpg";
+import emailjs from "emailjs-com";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,19 +19,71 @@ const Contact = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // basic email regex + common domain typos check
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const badDomains = ["gmial.com", "gamil.com", "yaho.com", "hotnail.com"];
+    return emailRegex.test(email) && !badDomains.some((d) => email.includes(d));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    // check if any field is empty
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.service ||
+      !formData.message
+    ) {
+      toast.error("⚠️ Please fill out all the fields");
+      return;
+    }
+
+    // email validation
+    if (!isValidEmail(formData.email)) {
+      toast.error("❌ Please enter a valid email address");
+      return;
+    }
+
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_yg1yvz1", // replace with your EmailJS Service ID
+        "template_001", // replace with your EmailJS Template ID
+        formData,
+        "7WccIzgFpyQ580mdo" // replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          toast.success("✅ Your message has been sent successfully!");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            service: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("Error:", error.text);
+          toast.error("❌ Something went wrong. Please try again.");
+        }
+      )
+      .finally(() => setLoading(false));
   };
 
   return (
     <div className="bg-blue-50 py-10 px-6 sm:px-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        
         {/* Left: Contact Form */}
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text text-transparent goat">
@@ -36,13 +96,14 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 goat">Full Name</label>
+              <label className="block text-sm font-medium text-gray-700 goat">
+                Full Name
+              </label>
               <div className="relative">
                 <FaUser className="absolute left-3 top-8 -translate-y-1/2 text-blue-400" />
                 <input
                   type="text"
                   name="name"
-                  required
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="John Doe"
@@ -53,13 +114,14 @@ const Contact = () => {
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 goat">Email Address</label>
+              <label className="block text-sm font-medium text-gray-700 goat">
+                Email Address
+              </label>
               <div className="relative">
                 <FaEnvelope className="absolute left-3 top-8 -translate-y-1/2 text-blue-400" />
                 <input
                   type="email"
                   name="email"
-                  required
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="johndoe@gmail.com"
@@ -70,13 +132,14 @@ const Contact = () => {
 
             {/* Phone */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 goat">Phone Number</label>
+              <label className="block text-sm font-medium text-gray-700 goat">
+                Phone Number
+              </label>
               <div className="relative">
                 <FaPhone className="absolute left-3 top-8 -translate-y-1/2 text-blue-400 scale-x-[-1]" />
                 <input
                   type="tel"
                   name="phone"
-                  required
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+1 (415) 555-0198"
@@ -87,36 +150,48 @@ const Contact = () => {
 
             {/* Service */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 goat">Which service are you interested in?</label>
+              <label className="block text-sm font-medium text-gray-700 goat">
+                Which service are you interested in?
+              </label>
               <div className="relative">
                 <FaClipboardList className="absolute left-3 top-8 -translate-y-1/2 text-blue-400" />
                 <select
                   name="service"
-                  required
                   value={formData.service}
                   onChange={handleChange}
                   className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] p-3 transition-all outline-none p-regular"
                 >
                   <option value="">Select a service</option>
-                  <option value="software-development">Custom Software Development</option>
-                  <option value="web-design">Website Design & Development</option>
-                  <option value="logo-branding">Logo & Brand Identity</option>
-                  <option value="ui-ux">UI/UX Design</option>
-                  <option value="ecommerce">E-commerce Solutions</option>
-                  <option value="seo-marketing">SEO & Digital Marketing</option>
-                  <option value="other">Other</option>
+                  <option value="Custom Software Development">
+                    Custom Software Development
+                  </option>
+                  <option value="Website Design & Development">
+                    Website Design & Development
+                  </option>
+                  <option value="Logo & Brand Identity">
+                    Logo & Brand Identity
+                  </option>
+                  <option value="UI/UX Design<">UI/UX Design</option>
+                  <option value="E-commerce Solutions">
+                    E-commerce Solutions
+                  </option>
+                  <option value="SEO & Digital Marketing">
+                    SEO & Digital Marketing
+                  </option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
             </div>
 
             {/* Message */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 goat">Your Message</label>
+              <label className="block text-sm font-medium text-gray-700 goat">
+                Your Message
+              </label>
               <div className="relative">
                 <FaRegCommentDots className="absolute left-3 top-6 text-blue-400" />
                 <textarea
                   name="message"
-                  required
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="From idea to launch — what's your plan?"
@@ -129,9 +204,17 @@ const Contact = () => {
             {/* Submit */}
             <button
               type="submit"
-              className="w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-[#002B5B] via-[#2563eb] to-[#0a0a0a] hover:opacity-90 transition-all duration-300 shadow-lg p-semibold"
+              disabled={loading}
+              className="w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-[#002B5B] via-[#2563eb] to-[#0a0a0a] hover:opacity-90 transition-all duration-300 shadow-lg p-semibold flex justify-center items-center"
             >
-              Send Message
+              {loading ? (
+                <>
+                  <span className="loader mr-2 border-2 border-white border-t-transparent rounded-full w-5 h-5 animate-spin"></span>
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
             </button>
           </form>
         </div>
