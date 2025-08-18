@@ -41,13 +41,13 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="py-14 px-12 bg-gradient-to-b from-black via-blue-950 to-black text-white">
+    <div className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 bg-gradient-to-b from-black via-blue-950 to-black text-white">
       {/* Header */}
-      <div className="flex flex-col gap-3 items-center justify-center mb-10">
-        <h1 className="goat font-bold text-5xl text-center tracking-wider bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+      <div className="flex flex-col gap-3 items-center justify-center mb-8 sm:mb-12">
+        <h1 className="goat font-bold text-3xl sm:text-4xl md:text-5xl text-center tracking-wide bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
           Our Creative Showcase
         </h1>
-        <p className="p-regular text-center text-gray-300 max-w-2xl">
+        <p className="p-regular text-center text-gray-300 max-w-2xl text-sm sm:text-base md:text-lg">
           Discover our finest design & development work — each project a blend
           of creativity, technology, and strategy, tailored to elevate brands
           and experiences.
@@ -55,24 +55,28 @@ const Portfolio = () => {
       </div>
 
       {/* Portfolio Grid */}
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {portfolioItems.map((item, idx) => (
           <div
             key={idx}
-            className="flex flex-col items-start gap-3 bg-white text-black rounded-xl overflow-hidden transition-all duration-500 transform hover:-translate-y-2"
+            className="flex flex-col items-start gap-3 bg-white text-black rounded-xl overflow-hidden shadow-md transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl"
           >
             <img
               loading="lazy"
               src={item.img}
               alt={item.title}
-              className="w-full h-60 object-cover hover:scale-105 transition-transform duration-500"
+              className="w-full h-48 sm:h-56 md:h-60 lg:h-64 object-cover hover:scale-105 transition-transform duration-500"
             />
-            <div className="p-5 flex flex-col gap-2">
-              <p className="bg-blue-200 text-blue-900 rounded-full px-4 py-1 text-sm font-medium w-fit p-regular">
+            <div className="p-4 sm:p-5 flex flex-col gap-2">
+              <p className="bg-blue-200 text-blue-900 rounded-full px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium w-fit p-regular">
                 {item.category}
               </p>
-              <h1 className="font-semibold text-lg p-semibold">{item.title}</h1>
-              <p className="text-gray-600 text-sm p-regular">{item.desc}</p>
+              <h1 className="font-semibold text-base sm:text-lg md:text-xl p-semibold">
+                {item.title}
+              </h1>
+              <p className="text-gray-600 text-xs sm:text-sm md:text-base p-regular">
+                {item.desc}
+              </p>
             </div>
           </div>
         ))}

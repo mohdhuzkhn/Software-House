@@ -25,7 +25,7 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // basic email regex + common domain typos check
+  // Email validation
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const badDomains = ["gmial.com", "gamil.com", "yaho.com", "hotnail.com"];
@@ -35,7 +35,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // check if any field is empty
     if (
       !formData.name ||
       !formData.email ||
@@ -47,7 +46,6 @@ const Contact = () => {
       return;
     }
 
-    // email validation
     if (!isValidEmail(formData.email)) {
       toast.error("❌ Please enter a valid email address");
       return;
@@ -57,10 +55,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_yg1yvz1", // replace with your EmailJS Service ID
-        "template_001", // replace with your EmailJS Template ID
+        "service_yg1yvz1",
+        "template_001",
         formData,
-        "7WccIzgFpyQ580mdo" // replace with your EmailJS Public Key
+        "7WccIzgFpyQ580mdo"
       )
       .then(
         () => {
@@ -82,14 +80,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-blue-50 py-10 px-6 sm:px-10">
+    <div className="bg-blue-50 py-10 px-4 sm:px-6 lg:px-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         {/* Left: Contact Form */}
         <div>
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text text-transparent goat">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text text-transparent goat">
             Get in Touch
           </h2>
-          <p className="text-gray-600 mt-2 mb-8 p-regular">
+          <p className="text-gray-600 mt-2 mb-8 text-sm sm:text-base p-regular">
             Tell us about your project and we’ll get back to you shortly.
           </p>
 
@@ -107,7 +105,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="John Doe"
-                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] p-3 transition-all outline-none p-regular"
+                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 p-3 transition-all outline-none text-sm sm:text-base p-regular"
                 />
               </div>
             </div>
@@ -125,7 +123,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="johndoe@gmail.com"
-                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] p-3 transition-all outline-none p-regular"
+                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 p-3 transition-all outline-none text-sm sm:text-base p-regular"
                 />
               </div>
             </div>
@@ -143,7 +141,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="+1 (415) 555-0198"
-                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] p-3 transition-all outline-none p-regular"
+                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 p-3 transition-all outline-none text-sm sm:text-base p-regular"
                 />
               </div>
             </div>
@@ -159,7 +157,7 @@ const Contact = () => {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] p-3 transition-all outline-none p-regular"
+                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 p-3 transition-all outline-none text-sm sm:text-base p-regular"
                 >
                   <option value="">Select a service</option>
                   <option value="Custom Software Development">
@@ -171,7 +169,7 @@ const Contact = () => {
                   <option value="Logo & Brand Identity">
                     Logo & Brand Identity
                   </option>
-                  <option value="UI/UX Design<">UI/UX Design</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
                   <option value="E-commerce Solutions">
                     E-commerce Solutions
                   </option>
@@ -195,8 +193,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="From idea to launch — what's your plan?"
-                  rows="7"
-                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] p-3 transition-all outline-none resize-none p-regular"
+                  rows="6"
+                  className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 p-3 transition-all outline-none resize-none text-sm sm:text-base p-regular"
                 ></textarea>
               </div>
             </div>
@@ -219,7 +217,7 @@ const Contact = () => {
           </form>
         </div>
 
-        {/* Right: Image */}
+        {/* Right: Image (hidden on small devices) */}
         <div className="hidden md:block">
           <img
             src={design}

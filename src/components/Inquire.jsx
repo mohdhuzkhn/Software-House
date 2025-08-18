@@ -30,27 +30,27 @@ export default function Inquire() {
     <footer className="bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-10">
           {footerCards.map((card) => (
             <a
               key={card.id}
               href={card.link}
-              className="relative bg-white border border-gray-200 p-6 rounded-xl shadow-sm overflow-hidden group hover:shadow-xl hover:border-blue-500 transition-all duration-300"
+              className="relative bg-white border border-gray-200 p-6 rounded-xl shadow-sm overflow-hidden group hover:shadow-xl hover:border-blue-500 transition-all duration-300 flex items-start"
             >
               {/* Icon Circle */}
-              <div className="absolute top-0 left-0 -ml-4 -mt-4 w-24 h-24 bg-gradient-to-br from-black to-blue-800 rounded-full flex items-center justify-center transform scale-100 group-hover:scale-105 transition-transform duration-300">
-                <card.icon className="h-10 w-10 text-white" strokeWidth={1.5} />
+              <div className="absolute top-0 left-0 -ml-4 -mt-4 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-black to-blue-800 rounded-full flex items-center justify-center transform scale-100 group-hover:scale-105 transition-transform duration-300">
+                <card.icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" strokeWidth={1.5} />
               </div>
 
               {/* Arrow Button */}
               <div
-                className={`absolute top-4 right-4 ${card.arrowBgColor} p-2 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}
+                className={`absolute top-4 right-4 ${card.arrowBgColor} p-2 sm:p-3 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}
               >
-                <ArrowUpRight className="h-5 w-5 text-white" strokeWidth={2} />
+                <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5 text-white" strokeWidth={2} />
               </div>
 
               {/* Title */}
-              <p className="text-xl text-gray-900 ml-16 pt-4 goat">
+              <p className="text-lg sm:text-xl text-gray-900 ml-16 sm:ml-16 pt-4 goat font-semibold leading-snug">
                 {card.title}
               </p>
 
