@@ -56,17 +56,17 @@ const Footer = () => {
             clients worldwide.
           </p>
           <div className="flex items-center gap-3 text-base sm:text-lg">
-            <a href="https://www.instagram.com/thewebers/">
+            <a href="https://www.instagram.com/_thewebers/">
               <p className="bg-blue-600 text-white p-3 rounded-full hover:bg-[#002B5B] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                 <FaInstagram />
               </p>
             </a>
-            <a href="https://www.linkedin.com/company/thewebers/">
+            <a href="https://www.linkedin.com/company/thewebersdevs/">
               <p className="bg-blue-600 text-white p-3 rounded-full hover:bg-[#002B5B] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                 <FaLinkedinIn />
               </p>
             </a>
-            <a href="https://www.facebook.com/thewebers/">
+            <a href="https://www.facebook.com/share/1Azr4Yjgp5/">
               <p className="bg-blue-600 text-white p-3 rounded-full hover:bg-[#002B5B] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                 <FaFacebookF />
               </p>
