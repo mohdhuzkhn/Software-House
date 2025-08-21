@@ -33,10 +33,10 @@ export default function Choose() {
     <div className="max-w-7xl mx-auto px-6 py-10 bg-white font-inter">
       {/* Header */}
       <div className="text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl goat font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl md:text-5xl goat font-bold text-gray-900 mb-4">
           Why Choose Us?
         </h1>
-        <p className="text-sm sm:text-base md:text-lg text-blue-600 max-w-2xl mx-auto p-regular">
+        <p className="text-lg text-blue-600 max-w-2xl mx-auto p-regular">
           We blend creativity, technical mastery, and strategic thinking to
           build software that delivers real results.
         </p>
@@ -67,10 +67,10 @@ export default function Choose() {
             >
               {/* Arrow */}
               <div className="absolute top-4 right-4 text-white opacity-80">
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={3} />
+                <ArrowRight className="w-6 h-6" strokeWidth={3} />
               </div>
               <div className="flex flex-col items-center justify-end h-full">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white goat">
+                <div className="text-4xl font-extrabold text-white goat">
                   {step.stepNumber}
                 </div>
                 <div className="text-sm font-medium text-white mt-1 p-regular">
@@ -85,8 +85,8 @@ export default function Choose() {
       {/* CTA */}
       <div className="text-center">
         <a
-          href="/contact"
-          className="bg-gradient-to-r from-blue-600 to-black text-white font-semibold px-6 sm:px-8 py-3 rounded-xl shadow-md hover:opacity-90 transition-all duration-300 inline-flex items-center text-sm sm:text-md"
+          href="https://calendly.com/thewebers200/30min"
+          className="bg-gradient-to-r from-blue-600 to-black text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:opacity-90 transition-all duration-300 inline-flex items-center text-sm p-semibold"
         >
           <span className="mr-2 p-regular">📅</span>
           Book a Free Consultation

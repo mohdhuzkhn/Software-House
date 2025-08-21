@@ -61,34 +61,41 @@ const Faqs = () => {
   const categories = Object.keys(faqData);
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-12 bg-white text-black">
+    <div className="py-10 px-12 bg-white text-black">
       {/* Header */}
-      <div className="flex flex-col gap-4 mb-10">
-        <h1 className="goat font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-3xl bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text text-transparent">
+      <div className="flex flex-col items-start gap-4 mb-10">
+        <h1 className="goat font-bold text-4xl max-w-3xl bg-gradient-to-r from-blue-400 to-blue-950 bg-clip-text text-transparent">
           Your Questions Resolved At 1 Place
         </h1>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="p-regular max-w-3xl text-gray-800 text-sm sm:text-base md:text-lg">
+        <div className="flex items-center justify-between w-full flex-wrap gap-4">
+          <p className="p-regular max-w-3xl text-gray-800">
             We've gathered the most frequently asked questions from our Clients.
             If you don't find what you're looking for, let us know, and we'll be
             happy to assist you.
           </p>
-          <button className="bg-blue-400 hover:bg-blue-500 transition px-5 py-2 rounded-md p-regular text-sm sm:text-base text-white cursor-pointer">
-            Contact Us
-          </button>
+          <a
+            href="https://wa.me/923272695806?text=Hi%20I%20want%20to%20know%20more%20about%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-blue-400 hover:bg-blue-500 transition px-4 py-2 rounded p-regular text-sm text-white cursor-pointer">
+              Contact Us
+            </button>
+          </a>
         </div>
       </div>
 
       {/* Category Selector */}
-      <div className="flex flex-wrap sm:flex-row flex-col gap-2 bg-blue-100 px-2 py-2 rounded-lg w-full sm:w-fit mb-6">
+      <div className="flex gap-2 bg-blue-100 px-2 py-2 rounded-lg w-fit mb-6">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded-lg font-medium transition p-regular text-sm sm:text-base ${selectedCategory === cat
+            className={`px-4 py-2 rounded-lg font-medium transition p-regular text-sm ${
+              selectedCategory === cat
                 ? "bg-gradient-to-r from-blue-600 to-blue-400 text-white"
-                : "bg-white text-black hover:bg-blue-200"
-              }`}
+                : "bg-white text-black hover:bg-blue-300"
+            }`}
           >
             {cat}
           </button>
@@ -96,21 +103,17 @@ const Faqs = () => {
       </div>
 
       {/* FAQ Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-6">
         {faqData[selectedCategory].map((faq, index) => (
           <div
             key={index}
-            className="bg-blue-50 text-black rounded-md p-5 sm:p-6 shadow hover:shadow-md transition flex flex-col items-start gap-4"
+            className="bg-blue-50 text-black rounded-md p-6 shadow hover:shadow-md transition flex flex-col items-start gap-4"
           >
             <div className="bg-blue-100 p-3 rounded-full">
               <HelpCircle className="text-blue-500" size={24} />
             </div>
-            <h3 className="font-semibold text-base sm:text-lg md:text-xl p-semibold">
-              {faq.question}
-            </h3>
-            <p className="text-gray-600 text-sm sm:text-base p-regular">
-              {faq.answer}
-            </p>
+            <h3 className="font-semibold text-lg p-semibold">{faq.question}</h3>
+            <p className="text-gray-600 p-regular">{faq.answer}</p>
           </div>
         ))}
       </div>
