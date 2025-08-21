@@ -85,7 +85,7 @@ export default function Choose() {
       {/* CTA */}
       <div className="text-center">
         <a
-          href="https://calendly.com/thewebers200/30min"
+          // href="https://calendly.com/thewebers200/30min"
           className="bg-gradient-to-r from-blue-600 to-black text-white font-semibold px-8 py-3 rounded-xl shadow-md hover:opacity-90 transition-all duration-300 inline-flex items-center text-sm p-semibold"
         >
           <span className="mr-2 p-regular">📅</span>

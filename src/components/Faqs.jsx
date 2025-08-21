@@ -73,15 +73,9 @@ const Faqs = () => {
             If you don't find what you're looking for, let us know, and we'll be
             happy to assist you.
           </p>
-          <a
-            href="https://wa.me/923272695806?text=Hi%20I%20want%20to%20know%20more%20about%20your%20services"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
             <button className="bg-blue-400 hover:bg-blue-500 transition px-4 py-2 rounded p-regular text-sm text-white cursor-pointer">
               Contact Us
             </button>
-          </a>
         </div>
       </div>
 
