@@ -4,10 +4,10 @@ export default function StepSection() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="goat tracking-wider text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-black via-blue-900 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="goat tracking-wider text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-black via-blue-900 to-blue-500 bg-clip-text text-transparent">
             Our Workflow
           </h2>
-          <p className="text-blue-500 text-lg max-w-3xl mx-auto p-regular">
+          <p className="text-blue-500 text-sm sm:text-lg max-w-3xl mx-auto p-regular">
             From Concept & Vision to Code — Streamlined Steps for Exceptional Results.
           </p>
         </div>
