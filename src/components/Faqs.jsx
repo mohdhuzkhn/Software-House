@@ -73,9 +73,14 @@ const Faqs = () => {
             If you don't find what you're looking for, let us know, and we'll be
             happy to assist you.
           </p>
-          <button className="bg-blue-400 hover:bg-blue-500 transition px-5 py-2 rounded-md p-regular text-sm sm:text-base text-white cursor-pointer">
+          <a
+            href="https://wa.me/923272695806"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-400 hover:bg-blue-500 transition px-5 py-2 rounded-md p-regular text-sm sm:text-base text-white cursor-pointer"
+          >
             Contact Us
-          </button>
+          </a>
         </div>
       </div>
 
@@ -86,8 +91,8 @@ const Faqs = () => {
             key={cat}
             onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-2 rounded-lg font-medium transition p-regular text-sm sm:text-base ${selectedCategory === cat
-                ? "bg-gradient-to-r from-blue-600 to-blue-400 text-white"
-                : "bg-white text-black hover:bg-blue-200"
+              ? "bg-gradient-to-r from-blue-600 to-blue-400 text-white"
+              : "bg-white text-black hover:bg-blue-200"
               }`}
           >
             {cat}

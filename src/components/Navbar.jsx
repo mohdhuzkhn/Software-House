@@ -52,12 +52,14 @@ const Navbar = () => {
 
         {/* Contact Us (Desktop) */}
         <div className="hidden lg:block">
-          <p
-            onClick={() => handleScroll("contact")}
-            className="cursor-pointer p-regular bg-blue-300 hover:bg-blue-100 transition-all duration-300 px-4 py-2 rounded-md"
+          <a
+            href="https://wa.me/923272695806"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer p-regular bg-blue-300 hover:bg-blue-100 transition-all duration-300 px-4 py-2 rounded-md inline-block"
           >
             Contact Us
-          </p>
+          </a>
         </div>
 
         {/* Menu Icon (Mobile) */}
@@ -103,12 +105,14 @@ const Navbar = () => {
           ))}
 
           {/* Contact Button */}
-          <button
-            onClick={() => handleScroll("contact")}
-            className="mt-6 bg-blue-400 text-white py-2 px-4 rounded-md p-regular hover:bg-blue-500 transition"
+          <a
+            href="https://wa.me/923272695806"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 bg-blue-400 text-white py-2 px-4 rounded-md p-regular hover:bg-blue-500 transition inline-block text-center"
           >
             Contact Us
-          </button>
+          </a>
         </div>
       </div>
     </>
