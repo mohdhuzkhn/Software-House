@@ -1,42 +1,103 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import portfolio1 from "../assets/Coaching.png";
+import portfolio2 from "../assets/Crypto.png";
+import portfolio3 from "../assets/Dashboard.png";
+import portfolio4 from "../assets/Finance.png";
+import portfolio5 from "../assets/Gemini.png";
+import portfolio6 from "../assets/HooBank.png";
+import portfolio7 from "../assets/Leadify.png";
+import portfolio8 from "../assets/Gross.png";
+import portfolio9 from "../assets/PortfolioWeb.png";
+import portfolio10 from "../assets/Virtual.png";
+import portfolio11 from "../assets/2.png";
+import portfolio15 from "../assets/portfolio15.webp";
 
 const Portfolio = () => {
   const portfolioItems = [
     {
-      img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+      img: portfolio7,
       category: "Web Development",
-      title: "Next.js SaaS Landing Page",
-      desc: "A responsive, high-performance SaaS landing page built with Next.js and TailwindCSS for modern startups.",
+      title: "Next.js SaaS Website",
+      desc: "A Next.js SaaS website crafted for a software agency with modern design.",
+      link: "https://dd-wa.vercel.app/",
     },
     {
-      img: "https://images.unsplash.com/photo-1522202195461-6cc64b100d8a?w=800&q=80",
-      category: "UI/UX Design",
-      title: "E-Commerce Mobile App UI",
-      desc: "A sleek mobile shopping experience with intuitive navigation and seamless checkout process.",
+      img: portfolio3,
+      category: "Software Development",
+      title: "Dashboard UI",
+      desc: "A collaborative dashboard where teams can work and manage tasks together.",
+      link: "https://dashboarddesign-five.vercel.app/",
     },
     {
-      img: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&q=80",
-      category: "Branding",
-      title: "Corporate Identity & Logo Design",
-      desc: "A complete branding package with a distinctive logo and cohesive visual identity.",
+      img: portfolio1,
+      category: "Web Design",
+      title: "Coaching Center Website",
+      desc: "A responsive website built for a coaching center to manage courses online.",
+      link: "https://tss-database-f5beb.web.app/",
     },
     {
-      img: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=80",
+      img: portfolio4,
       category: "Custom Development",
-      title: "CRM Dashboard for Business",
-      desc: "A powerful CRM dashboard with analytics, customer management, and task tracking tools.",
+      title: "Finance Dashboard",
+      desc: "A full MERN stack finance dashboard web app with analytics & insights.",
+      link: "/",
     },
     {
-      img: "https://images.unsplash.com/photo-1523475496153-3d6cc3000f82?w=800&q=80",
+      img: portfolio8,
+      category: "Software Development",
+      title: "Full Stack Grocery Application",
+      desc: "A full MERN stack grcoery web app with admin dashboard & stripe integration.",
+      link: "/",
+    },
+    {
+      img: portfolio15,
+      category: "Custom Development",
+      title: "Task Manager",
+      desc: "A full frontend based task management app to manage your daily tasks.",
+      link: "/",
+    },
+    {
+      img: portfolio11,
       category: "Graphic Design",
-      title: "Marketing Campaign Graphics",
-      desc: "Eye-catching social media and ad graphics designed to boost brand engagement.",
+      title: "Brand Identity",
+      desc: "A modern brand agency logo design package with strong visual appeal.",
+      link: "https://the-webers.vercel.app/",
     },
     {
-      img: "https://images.unsplash.com/photo-1525186402429-b4ff38bedbec?w=800&q=80",
-      category: "Product Design",
-      title: "3D Product Visualization",
-      desc: "Realistic 3D renders that bring your products to life before manufacturing.",
+      img: portfolio6,
+      category: "Landing Page",
+      title: "Bank Payments AI Page",
+      desc: "A Next.js landing page focused on AI-driven bank payments solutions.",
+      link: "https://apexwallet.vercel.app/",
+    },
+    {
+      img: portfolio10,
+      category: "Landing Page",
+      title: "Developers Landing Page",
+      desc: "A React.js landing page tailored for developers and tech enthusiasts.",
+      link: "https://virtualsolutions-three.vercel.app/",
+    },
+    {
+      img: portfolio9,
+      category: "Personal Portfolio",
+      title: "Next.js Portfolio Site",
+      desc: "A modern Next.js portfolio website to showcase projects and skills.",
+      link: "https://annas-portfolio-ten.vercel.app/",
+    },
+    {
+      img: portfolio2,
+      category: "Software Development",
+      title: "Crypto Price Tracker",
+      desc: "A crypto software web application for live daily price updates.",
+      link: "https://cryptotrack-neon.vercel.app/",
+    },
+    {
+      img: portfolio5,
+      category: "AI Application",
+      title: "Gemini Chat Bot",
+      desc: "An AI chatbot powered by Gemini API for smart conversational support.",
+      link: "https://gemini-bot-pi.vercel.app/",
     },
   ];
 
@@ -54,18 +115,19 @@ const Portfolio = () => {
         </p>
       </div>
 
-      {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {portfolioItems.map((item, idx) => (
-          <div
+          <Link
+            to={item.link}
             key={idx}
-            className="flex flex-col items-start gap-3 bg-white text-black rounded-xl overflow-hidden shadow-md transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl"
+            target="_blank"
+            className="flex flex-col items-start gap-3 bg-white text-black rounded-xl overflow-hidden shadow-md transition-all duration-500 transform hover:-translate-y-2 hover:shadow-xl border-none outline-none"
           >
             <img
               loading="lazy"
               src={item.img}
               alt={item.title}
-              className="w-full h-48 sm:h-56 md:h-60 lg:h-64 object-cover hover:scale-105 transition-transform duration-500"
+              className="w-full h-48 sm:h-56 md:h-60 lg:h-72 hover:scale-105 transition-transform duration-500"
             />
             <div className="p-4 sm:p-5 flex flex-col gap-2">
               <p className="bg-blue-200 text-blue-900 rounded-full px-3 sm:px-4 py-1 text-xs sm:text-sm font-medium w-fit p-regular">
@@ -78,7 +140,7 @@ const Portfolio = () => {
                 {item.desc}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
