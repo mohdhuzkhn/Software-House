@@ -2,15 +2,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroImg from "../assets/hero3.jpg";
 import heroWeb from "../assets/heroWeb.png";
-import {
-  Code,
-  Bot,
-  Figma,
-  MonitorSmartphone,
-  GlobeLock,
-  LayoutGridIcon,
-  PencilRuler,
-} from "lucide-react";
+import { Globe, AppWindow, Bot, ShoppingCart, Smartphone } from "lucide-react";
+import { FaWordpress } from "react-icons/fa";
 
 // Variants
 const containerVariants = {
@@ -42,7 +35,7 @@ const iconVariants = {
 };
 
 const Hero = () => {
-  const words = ["Websites", "Logos", "Redesign", "Custom"];
+  const words = ["Websites", "Web Apps", "Chatbots", "WordPress Sites", "Online Stores", "Mobile Apps"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -121,10 +114,10 @@ const Hero = () => {
           variants={containerVariants}
         >
           {[
-            { icon: <GlobeLock />, text: "Secure Websites" },
-            { icon: <LayoutGridIcon />, text: "Brand Logos" },
-            { icon: <PencilRuler />, text: "Website Design" },
-            { icon: <MonitorSmartphone />, text: "Website Recreation" },
+            { icon: <Globe />, text: "Websites" },
+            { icon: <AppWindow />, text: "Web Applications" },
+            { icon: <ShoppingCart />, text: "E-Commerce Websites" },
+            { icon: <Smartphone />, text: "Mobile Applications" },
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -154,15 +147,17 @@ const Hero = () => {
         animate="visible"
       >
         {[
-          <Code key="code" />,
-          <Figma key="figma" />,
+          <Globe key="globe" />,
+          <AppWindow key="appwindow" />,
           <Bot key="bot" />,
-          <MonitorSmartphone key="monitor" />,
+          <FaWordpress key="wordpress" />,
+          <ShoppingCart key="cart" />,
+          <Smartphone key="smartphone" />,
         ].map((Icon, index) => (
           <motion.p
             key={index}
             className={
-              index === 0 || index === 3
+              index % 2 === 0
                 ? "border-2 border-blue-500 p-2 bg-blue-100"
                 : "bg-white border-2 border-blue-500 p-2 rounded-full"
             }

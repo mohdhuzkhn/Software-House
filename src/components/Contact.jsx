@@ -160,21 +160,15 @@ const Contact = () => {
                   className="pl-10 mt-2 w-full rounded-xl bg-blue-50 border border-blue-300 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 p-3 transition-all outline-none text-sm sm:text-base p-regular"
                 >
                   <option value="">Select a service</option>
-                  <option value="Custom Software Development">
-                    Custom Software Development
+                  <option value="Websites">Websites</option>
+                  <option value="Web Applications">Web Applications</option>
+                  <option value="Chatbots">Chatbots</option>
+                  <option value="WordPress">WordPress</option>
+                  <option value="E-Commerce Websites">
+                    E-Commerce Websites
                   </option>
-                  <option value="Website Design & Development">
-                    Website Design & Development
-                  </option>
-                  <option value="Logo & Brand Identity">
-                    Logo & Brand Identity
-                  </option>
-                  <option value="UI/UX Design">UI/UX Design</option>
-                  <option value="E-commerce Solutions">
-                    E-commerce Solutions
-                  </option>
-                  <option value="SEO & Digital Marketing">
-                    SEO & Digital Marketing
+                  <option value="Mobile Applications">
+                    Mobile Applications
                   </option>
                   <option value="Other">Other</option>
                 </select>

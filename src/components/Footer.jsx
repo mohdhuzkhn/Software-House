@@ -97,12 +97,12 @@ const Footer = () => {
             Our Services
           </h1>
           {[
-            "Custom Software Development",
-            "Website Design & Development",
-            "Logo & Brand Identity",
-            "UI/UX Design",
-            "E-commerce Solutions",
-            "SEO & Digital Marketing",
+            "Websites",
+            "Web Applications",
+            "Chatbots",
+            "WordPress",
+            "E-Commerce Websites",
+            "Mobile Applications",
           ].map((service, index) => (
             <p
               key={index}

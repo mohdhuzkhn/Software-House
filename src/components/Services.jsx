@@ -1,30 +1,52 @@
 import React, { useState } from "react";
-import { Wrench, PenTool, Figma, CodeXml, HeadsetIcon } from "lucide-react";
-import design2 from "../assets/design2.jpg";
-import design1 from "../assets/design1.jpg";
+import { Wrench, Globe, AppWindow, Bot, ShoppingCart, Smartphone, HeadsetIcon } from "lucide-react";
+import { FaWordpress } from "react-icons/fa";
 import design5 from "../assets/design5.jpg";
+import design8 from "../assets/design8.jpg";
+import design1 from "../assets/design1.jpg";
+import design4 from "../assets/design4.jpg";
+import design7 from "../assets/design7.jpg";
+import design2 from "../assets/design2.jpg";
 
 const Services = () => {
-  const [activeService, setActiveService] = useState("Graphics");
+  const [activeService, setActiveService] = useState("Websites");
 
   const serviceData = {
-    Graphics: {
-      icon: <PenTool />,
-      title: "Graphics",
-      desc: "We create stunning visual assets — from branding kits to social media creatives — that speak for your brand and captivate your audience.",
-      img: design2,
+    Websites: {
+      icon: <Globe />,
+      title: "Websites",
+      desc: "We design and develop fast, responsive websites that make a lasting first impression — built to reflect your brand and turn visitors into customers.",
+      img: design5,
     },
-    Designing: {
-      icon: <Figma />,
-      title: "Designing",
-      desc: "Our UI/UX designs blend aesthetics with usability, delivering seamless and engaging experiences for your customers.",
+    "Web Applications": {
+      icon: <AppWindow />,
+      title: "Web Applications",
+      desc: "We build robust, scalable web applications tailored to your business logic — from dashboards to internal tools — using modern frameworks and clean architecture.",
+      img: design8,
+    },
+    Chatbots: {
+      icon: <Bot />,
+      title: "Chatbots",
+      desc: "We design intelligent chatbots that engage visitors, answer questions instantly, and qualify leads around the clock — cutting response times and boosting conversions.",
       img: design1,
     },
-    Development: {
-      icon: <CodeXml />,
-      title: "Development",
-      desc: "We build high-performance, scalable, and secure web applications tailored to your business needs using modern tech stacks.",
-      img: design5,
+    WordPress: {
+      icon: <FaWordpress />,
+      title: "WordPress",
+      desc: "We build and customize WordPress websites that are easy to manage, SEO-friendly, and quick to launch — perfect for blogs, portfolios, and business sites alike.",
+      img: design4,
+    },
+    "E-Commerce Websites": {
+      icon: <ShoppingCart />,
+      title: "E-Commerce Websites",
+      desc: "We create secure, high-converting online stores with smooth checkouts — from product catalogs to payment integration — built to help you sell more.",
+      img: design7,
+    },
+    "Mobile Applications": {
+      icon: <Smartphone />,
+      title: "Mobile Applications",
+      desc: "We craft intuitive, high-performance mobile apps for iOS and Android — from concept to launch — designed to keep your users engaged.",
+      img: design2,
     },
   };
 
