@@ -1,4 +1,8 @@
 import React from "react";
+import geminiIcon from "../assets/gemini-icon.svg";
+import dialogflowIcon from "../assets/dialogflow-icon.svg";
+import langchainIcon from "../assets/langchain-icon.svg";
+import whatsappIcon from "../assets/whatsapp-icon.svg";
 
 const tools = [
   { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
@@ -16,6 +20,11 @@ const tools = [
   { name: "Vs Code", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
   { name: "Wordpress", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg" },
   { name: "Slack", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg", hiddenOnMobile: true },
+  { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "Google Gemini", img: geminiIcon },
+  { name: "Dialogflow", img: dialogflowIcon },
+  { name: "LangChain", img: langchainIcon },
+  { name: "WhatsApp", img: whatsappIcon },
 ];
 
 const Tools = () => (
