@@ -17,42 +17,22 @@ const About = () => {
         </p>
 
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight goat">
-          Crafting{" "}
+          From Creative Ideas to{" "}
           <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">
-            Designs & Solutions
-          </span>{" "}
-          that Inspire
+            Intelligent Solutions
+          </span>
         </h1>
 
         <p className="text-gray-300 leading-relaxed p-regular text-sm sm:text-base text-left">
           We are a creative technology company specializing in delivering
-          impactful digital solutions. From stunning graphic designs and
-          memorable brand logos to high-performance websites and full-stack
-          development, we combine creativity with cutting-edge technology. Our
-          team transforms ideas into reality—whether it's building a brand-new
-          digital presence, redesigning an outdated website, or developing
-          custom business software that drives success.
+          impactful, AI-powered digital solutions. From stunning graphic
+          designs and memorable brand logos to high-performance websites and
+          full-stack development, we combine creativity with cutting-edge,
+          intelligent technology. Our team transforms ideas into
+          reality—whether it's building a brand-new digital presence,
+          redesigning an outdated website, or developing custom, AI-driven
+          business software that drives success.
         </p>
-
-        {/* Stats Section */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mt-6">
-          <div className="flex flex-col gap-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-blue-400 goat">50+</h2>
-            <p className="text-gray-400 text-xs sm:text-sm p-regular">Brands Designed</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-blue-400 goat">30+</h2>
-            <p className="text-gray-400 text-xs sm:text-sm p-regular">Websites Devs</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-blue-400 goat">100%</h2>
-            <p className="text-gray-400 text-xs sm:text-sm p-regular">On-Time Delivery</p>
-          </div>
-          <div className="flex flex-col gap-1">
-            <h2 className="text-2xl sm:text-3xl font-bold text-blue-400 goat">99%</h2>
-            <p className="text-gray-400 text-xs sm:text-sm p-regular">Client Satisfaction</p>
-          </div>
-        </div>
       </div>
 
       {/* Right Content */}

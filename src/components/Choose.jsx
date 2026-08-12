@@ -1,17 +1,19 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CalendarCheck, Handshake, LifeBuoy } from "lucide-react";
 
 const stepsData = [
   {
     id: 1,
-    title: "Proven Expertise",
+    icon: <CalendarCheck className="w-6 h-6" />,
+    title: "1-Month Free Demo / Trial",
     description:
-      "Years of delivering high-quality software solutions across industries, ensuring precision and innovation in every line of code.",
+      "Experience our website solution completely risk-free with a 1-month free demo/trial. Test the website, explore its features, and evaluate the results before making your final decision.",
     bgColor: "bg-black",
     stepNumber: "01",
   },
   {
     id: 2,
+    icon: <Handshake className="w-6 h-6" />,
     title: "Client-First Approach",
     description:
       "Your goals drive our process. We collaborate closely to deliver solutions that fit your vision and business needs.",
@@ -20,9 +22,10 @@ const stepsData = [
   },
   {
     id: 3,
-    title: "Reliable Support",
+    icon: <LifeBuoy className="w-6 h-6" />,
+    title: "Ongoing Support & Growth",
     description:
-      "From kickoff to post-launch, we provide dependable support to help your software grow and adapt with your business.",
+      "Our support doesn't end after delivery. We provide ongoing assistance, updates, improvements, and technical support to help your website continue performing and growing with your business.",
     bgColor: "bg-blue-800",
     stepNumber: "03",
   },
@@ -52,6 +55,9 @@ export default function Choose() {
             {/* Card */}
             <div className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 max-w-md flex-1 flex flex-col justify-between shadow-md hover:shadow-xl transition-all duration-300">
               <div>
+                <div className="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+                  {step.icon}
+                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-6 goat">
                   {step.title}
                 </h3>
